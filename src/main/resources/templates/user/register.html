@@ -1,0 +1,39 @@
+<div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Usuarios</h1>
+    <p class="mb-4">Formulario de cadastro de usuarios</p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Cadatro de usuarios: </h6>
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <form class="row g-3" action="/usuario/cadastrar" method="post" onsubmit="alert('Cadasrado com Sucesso!')">
+                    <div class="col-md-6">
+                        <input type="text" name="name" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="address" class="form-control form-control-user" id="exampleLastName" placeholder="Address">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="email" class="form-control form-control-user" id="exampleEmail" placeholder="email">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="cpf" class="form-control form-control-user" id="examplecpf" placeholder="CPF">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="password" class="form-control form-control-user" id="password" placeholder="password">
+                    </div>
+                    <div class="col-12">
+                   <button type="submit" class="btn btn-primary"> Cadastrar </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> </div>
+<div th:replace="shared/footer" xmlns:th="http://www.w3.org/1999/xhtml"></div>
