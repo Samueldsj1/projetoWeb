@@ -33,14 +33,30 @@ public class UserController {
     }
 
 
-    @GetMapping(value = "{/id}")
+    @GetMapping(value = "/{id}")
     public String getUser(@PathVariable Integer id, Model model){
         Optional<UserModel> user = userService.findById(id);
         if(user.isPresent()){
-            model.addAttribute("userSelected", user.get());
-            return "user/alterar";
+            model.addAttribute("user", user.get());
+            return "user/update";
         }else{ return "redirect:/usuario";}
     }
+    @PostMapping(value = "/alterar/{id}")
+    public  String updateUser(@PathVariable Integer id, UserModel userModel){
+        Optional<UserModel> user= userService.findById(id);
+        if(user.isPresent()){
+            userService.save(userModel);
+            return "redirect:/usuario";
+        }else {
+            return"redirect:/usuario";
+        }
+    }
+    @GetMapping(value = "/delete/{id}")
+    public  String deleteUserById(@PathVariable Integer id){
+        userService.deleteUserById(id);
+        return "redirect:/usuario";
+    }
+
 
 
 }

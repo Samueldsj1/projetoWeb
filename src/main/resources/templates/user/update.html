@@ -8,25 +8,25 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Cadatro de usuarios: </h6>
+            <h6 class="m-0 font-weight-bold text-primary">Alteração de usuarios: </h6>
         </div>
         <div class="card-body">
             <div class="container" xmlns:th="http://www.w3.org/1999/xhtml">
-                <form class="row g-3" action="/usuario/alterar" method="post" onsubmit="alert('Alterado com Sucesso!')">
+                <form class="row g-3" th:action="@{'/usuario/alterar/' + ${user.id}}" method="post" onsubmit="alert('Alterado com Sucesso!')">
                     <div class="col-md-6">
-                        <input type="text" th:value="${userSelected.name}" name="name" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                        <input type="text" th:value="${user.name}" name="name" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" th:value="${userSelected.address}" name="address" class="form-control form-control-user" id="exampleLastName" placeholder="Address">
+                        <input type="text" th:value="${user.address}" name="address" class="form-control form-control-user" id="exampleLastName" placeholder="Address">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" th:value="${userSelected.email}" name="email" class="form-control form-control-user" id="exampleEmail" placeholder="email">
+                        <input type="text" th:value="${user.email}" name="email" class="form-control form-control-user" id="exampleEmail" placeholder="email">
                     </div>
                     <div class="col-md-6">
-                        <input type="text"  th:value="${userSelected.cpf}" name="cpf" class="form-control form-control-user" id="examplecpf" placeholder="CPF">
+                        <input type="text"  th:value="${user.cpf}" name="cpf" class="form-control form-control-user" id="examplecpf" placeholder="CPF">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" th:value="${userSelected.password}" name="password" class="form-control form-control-user" id="password" placeholder="password">
+                        <input type="text" th:value="${user.password}" name="password" class="form-control form-control-user" id="password" placeholder="password">
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary"> alterar </button>
@@ -35,5 +35,5 @@
             </div>
         </div>
     </div>
-</div> </div>
+</div>
 <div th:replace="shared/footer" xmlns:th="http://www.w3.org/1999/xhtml"></div>
