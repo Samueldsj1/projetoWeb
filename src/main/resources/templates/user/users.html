@@ -37,7 +37,7 @@
                                             <td th:text="${user.email}"></td>
                                             <td th:text="${user.password}"></td>
                                             <td><a th:href="@{'/usuario/'+${user.id}}"  class="btn btn-warning" >Alterar</a></td>
-                                            <td><a th:href="@{'/usuario/delete/'+${user.id}}"  class="btn btn-danger" >Excluir</a></td>
+                                            <td><a th:href="@{'/usuario/delete/'+${user.id}}"  class="btn btn-danger" onclick="return confirm ('Deseja realmente EXCLUIR este usuario?')" >Excluir</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
